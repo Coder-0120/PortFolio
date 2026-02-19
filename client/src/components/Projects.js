@@ -1,56 +1,6 @@
 import React, { useRef, useState } from "react";
 import "../styles/Sections.css";
 
-/* ── SVG Mockup ─────────────────────────────────────────── */
-function Mockup({ color, color2, bg = "#0a0f1a" }) {
-  const W = 480, H = 215;
-  return (
-    <svg viewBox={`0 0 ${W} ${H}`} xmlns="http://www.w3.org/2000/svg"
-      style={{ width: "100%", height: "100%", display: "block" }}>
-      <rect width={W} height={H} fill={bg} />
-      {/* Sidebar */}
-      <rect width="58" height={H} fill="rgba(255,255,255,0.025)" />
-      <rect x="13" y="12" width="32" height="13" rx="4" fill={color} opacity=".9" />
-      {[38,56,74,92,110].map((y,i)=>(
-        <rect key={y} x="13" y={y} width="32" height="7" rx="3.5"
-          fill={i===0?color:"rgba(255,255,255,0.06)"} />
-      ))}
-      {/* Top bar */}
-      <rect x="58" width={W-58} height="26" fill="rgba(255,255,255,0.02)" />
-      <rect x="72" y="8" width="75" height="9" rx="3" fill="rgba(255,255,255,0.05)" />
-      <circle cx={W-18} cy="13" r="7" fill={color} opacity=".7" />
-      <circle cx={W-34} cy="13" r="5" fill="rgba(255,255,255,0.06)" />
-      {/* Stat cards */}
-      {[0,1,2].map(i=>{
-        const x=72+i*110;
-        return(
-          <g key={i}>
-            <rect x={x} y="36" width="100" height="52" rx="7"
-              fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.055)" strokeWidth="1"/>
-            <rect x={x+9} y="44" width="26" height="7" rx="3"
-              fill={i===0?color:i===1?color2:"rgba(255,255,255,0.1)"} opacity=".8"/>
-            <rect x={x+9} y="56" width="75" height="4" rx="2" fill="rgba(255,255,255,0.06)"/>
-            <rect x={x+9} y="64" width="52" height="3" rx="1.5" fill="rgba(255,255,255,0.04)"/>
-            <rect x={x+9} y="71" width="64" height="3" rx="1.5" fill="rgba(255,255,255,0.035)"/>
-          </g>
-        );
-      })}
-      {/* Chart panel */}
-      <rect x="72" y="98" width={W-86} height="100" rx="8"
-        fill="rgba(255,255,255,0.025)" stroke="rgba(255,255,255,0.05)" strokeWidth="1"/>
-      <rect x="84" y="108" width="65" height="7" rx="3" fill="rgba(255,255,255,0.06)"/>
-      <rect x={W-130} y="107" width="50" height="9" rx="5" fill={color} opacity=".82"/>
-      {[30,50,38,65,44,58,35,48].map((h,i)=>(
-        <rect key={i} x={84+i*34} y={192-h} width="20" height={h} rx="4"
-          fill={i%2===0?color:color2} opacity={.32+i*.055}/>
-      ))}
-      <rect x="84" y="192" width={W-106} height="1" fill="rgba(255,255,255,0.05)"/>
-      {/* Glow */}
-      <circle cx={W-35} cy={H-35} r="45" fill={color} opacity=".06"/>
-    </svg>
-  );
-}
-
 /* ── Tilt Card ──────────────────────────────────────────── */
 function PCard({ p, large }) {
   const ref = useRef(null);
@@ -78,7 +28,7 @@ function PCard({ p, large }) {
       onMouseMove={onMove} onMouseEnter={onEnter} onMouseLeave={onLeave}>
       <div className="pc-border" />
 
-      {/* Browser mockup */}
+      {/* Browser mockup with project screenshot */}
       <div className="pc-img">
         <div className="pc-chrome">
           <div className="pc-wdots">
@@ -90,9 +40,22 @@ function PCard({ p, large }) {
           </div>
           <div style={{width:48,flexShrink:0}}/>
         </div>
+
+        {/* Project screenshot */}
         <div className="pc-mockup">
-          <Mockup color={p.color} color2={p.color2} />
+          <img
+            src={p.img}
+            alt={p.title}
+            className="pc-screenshot"
+          />
+          {/* Fallback gradient if no image loads */}
+          <div
+            className="pc-img-fallback"
+            style={{background:`linear-gradient(135deg, ${p.color}22 0%, ${p.color2}18 50%, #0a0f1a 100%)`}}
+          />
         </div>
+
+        {/* Hover veil */}
         <div
           className={`pc-veil${hov?" on":""}`}
           style={{background:`linear-gradient(135deg,${p.color}18,${p.color2}10,transparent 60%)`}}
@@ -143,6 +106,13 @@ function PCard({ p, large }) {
 }
 
 /* ── Data ───────────────────────────────────────────────── */
+/*
+  ADD YOUR OWN SCREENSHOTS:
+  • Put images in /public/images/ (e.g. /public/images/devconnect.png)
+  • Then set  img: "/images/devconnect.png"
+  • Recommended size: 1280×720px or 960×540px (16:9)
+  • If you have no screenshot yet, the gradient fallback shows automatically
+*/
 const FEAT = [
   {
     title:"DevConnect", tagline:"Social platform for developers",
@@ -150,6 +120,7 @@ const FEAT = [
     tech:["React","Node.js","MongoDB","Socket.io","JWT","Express"],
     gh:"https://github.com/anshulverma", live:"https://devconnect.live",
     featured:true, color:"#00d4aa", color2:"#7c3aed",
+    img:"/images/devconnect.png",   // 👈 replace with your screenshot path
   },
   {
     title:"TaskFlow", tagline:"Team task management API",
@@ -157,6 +128,7 @@ const FEAT = [
     tech:["Express.js","MongoDB","JWT","REST","Bcrypt"],
     gh:"https://github.com/anshulverma", live:"https://taskflow.live",
     featured:true, color:"#7c3aed", color2:"#f59e0b",
+    img:"/images/taskflow.png",     // 👈 replace with your screenshot path
   },
 ];
 const REST = [
@@ -166,6 +138,7 @@ const REST = [
     tech:["React","Canvas API","JavaScript"],
     gh:"https://github.com/anshulverma", live:"https://algoviz.live",
     color:"#f59e0b", color2:"#00d4aa",
+    img:"/images/algoviz.png",      // 👈 replace with your screenshot path
   },
   {
     title:"ShopEase", tagline:"E-commerce with Stripe",
@@ -173,6 +146,7 @@ const REST = [
     tech:["React","Node.js","MongoDB","Stripe"],
     gh:"https://github.com/anshulverma", live:"https://shopease.live",
     color:"#00d4aa", color2:"#f43f5e",
+    img:"/images/shopease.png",     // 👈 replace with your screenshot path
   },
   {
     title:"CodePulse", tagline:"AI-powered code reviewer",
@@ -180,6 +154,7 @@ const REST = [
     tech:["React","OpenAI","Node.js"],
     gh:"https://github.com/anshulverma", live:"https://codepulse.live",
     color:"#7c3aed", color2:"#00d4aa",
+    img:"/images/codepulse.png",    // 👈 replace with your screenshot path
   },
 ];
 
