@@ -5,10 +5,10 @@ import "../styles/Sections.css";
 const WEB3FORMS_KEY = "d60c7cb2-7e44-4f02-aa57-18b9ac1a1521";
 
 const SOCIALS = [
-  { ico:"🐙", lbl:"GitHub",   href:"https://github.com/anshulverma" },
-  { ico:"💼", lbl:"LinkedIn", href:"https://linkedin.com/in/anshulverma" },
-  { ico:"🐦", lbl:"Twitter",  href:"https://twitter.com/anshulverma" },
-  { ico:"📧", lbl:"Email",    href:"mailto:anshul@example.com" },
+  { ico:"🐙", lbl:"GitHub",   href:"https://github.com/Coder-0120" },
+  { ico:"💼", lbl:"LinkedIn", href:"https://www.linkedin.com/in/anshul-verma180705/" },
+  { ico:"🐦", lbl:"Twitter",  href:"#" },
+  { ico:"📧", lbl:"Email",    href:"mailto:av4862187@gmail.com" },
 ];
 
 export default function Contact() {
@@ -130,7 +130,7 @@ export default function Contact() {
                     border:"1px solid rgba(244,63,94,.2)",
                     letterSpacing:".04em"
                   }}>
-                    ⚠ Something went wrong — try emailing me at anshul@example.com
+                    ⚠ Something went wrong — try emailing me at av4862187@gmail.com
                   </div>
                 )}
 

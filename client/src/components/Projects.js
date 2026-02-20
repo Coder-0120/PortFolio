@@ -126,7 +126,7 @@ const FEAT = [
     title:"Customer-Management System", tagline:"Team task management API",
     desc:"A robust backend-driven customer management system designed to handle transactions, track dues, and manage customer data efficiently. Features secure authentication, role-based access, and scalable REST APIs for reliable business operations.",
     tech:["Express.js","MongoDB","JWT","REST","Bcrypt"],
-    gh:"https://github.com/Coder-0120/Customer-Management-System", live:"https://taskflow.live",
+    gh:"https://github.com/Coder-0120/Customer-Management-System", live:"https://github.com/Coder-0120/Customer-Management-System",
     featured:true, color:"#7c3aed", color2:"#f59e0b",
     img:"/images/customer-management.png",     // 👈 replace with your screenshot path
   },
@@ -144,7 +144,7 @@ const REST = [
     title:"APIFlux", tagline:"Real-Time Insights for Reliable APIs.",
     desc:"APIFlux is a real-time API monitoring system that helps developers and businesses track API uptime, performance, and response trends through live health checks, detailed logs, and visual analytics.",
     tech:["React","Node.js","MongoDB","Stripe"],
-    gh:"https://github.com/Coder-0120/API-Monitoring", live:"https://apiflux.live",
+    gh:"https://github.com/Coder-0120/API-Monitoring", live:"https://github.com/Coder-0120/API-Monitoring",
     color:"#00d4aa", color2:"#f43f5e",
     img:"/images/apiflux.png",     // 👈 replace with your screenshot path
   },
@@ -152,7 +152,7 @@ const REST = [
     title:"GoFood", tagline:"Delicious Food, Just a Click Away.",
     desc:"A modern food ordering web application built using the MERN stack, providing a fast, secure, and intuitive platform for users to browse food categories, place orders, and enjoy a seamless dining experience.",
     tech:["React","OpenAI","Node.js"],
-    gh:"https://github.com/Coder-0120/GoFood", live:"https://gofood.live",
+    gh:"https://github.com/Coder-0120/GoFood", live:"https://github.com/Coder-0120/GoFood",
     color:"#7c3aed", color2:"#00d4aa",
     img:"/images/gofood.png",    // 👈 replace with your screenshot path
   },

@@ -92,7 +92,7 @@ export default function Hero() {
 
           <div className="hero-btns">
             <a href="#projects" className="btn btn-teal">View Projects ↗</a>
-            <a href="/resume.pdf" className="btn btn-outline" target="_blank" rel="noopener noreferrer">Download CV ↓</a>
+          <a href="/resume.pdf" className="btn btn-outline" download="Anshul_Verma_Resume.pdf">Download Resume ↓</a>
           </div>
         </div>
 

@@ -39,9 +39,8 @@ export default function Navbar() {
           </ul>
 
           {/* CTA */}
-          <a href="/resume.pdf" className="nav-cta" target="_blank" rel="noopener noreferrer">
-            Resume ↓
-          </a>
+          <a href="/resume.pdf" className="nav-cta" download="Anshul_Verma_Resume.pdf">Resume ↓</a>
+
 
           {/* Hamburger */}
           <button
