@@ -176,6 +176,7 @@
 .nav-mob.open .nav-mob-link:nth-child(2) { opacity: 1; transform: none; transition-delay: 0.12s; }
 .nav-mob.open .nav-mob-link:nth-child(3) { opacity: 1; transform: none; transition-delay: 0.18s; }
 .nav-mob.open .nav-mob-link:nth-child(4) { opacity: 1; transform: none; transition-delay: 0.24s; }
+.nav-mob.open .nav-mob-link:nth-child(5) { opacity: 1; transform: none; transition-delay: 0.30s; }
 
 .nav-mob-link:last-child { border-bottom: none; }
 

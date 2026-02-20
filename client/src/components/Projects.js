@@ -115,46 +115,46 @@ function PCard({ p, large }) {
 */
 const FEAT = [
   {
-    title:"DevConnect", tagline:"Social platform for developers",
-    desc:"Real-time social hub — live chat via Socket.io, JWT auth, project showcases and instant notifications. Fully responsive.",
-    tech:["React","Node.js","MongoDB","Socket.io","JWT","Express"],
-    gh:"https://github.com/anshulverma", live:"https://devconnect.live",
+    title:"InvoicePro", tagline:"Professional Invoicing Made Effortless.",
+    desc:"A modern invoicing platform that enables users to create, manage, track, and download professional invoices with ease. Built to streamline billing workflows through a clean interface, secure data handling, and efficient invoice management.",
+    tech:["React","Node.js","MongoDB","Express"],
+    gh:"https://github.com/Coder-0120/InvoicePro", live:"https://invoice-pro-sepia.vercel.app/home",
     featured:true, color:"#00d4aa", color2:"#7c3aed",
-    img:"/images/devconnect.png",   // 👈 replace with your screenshot path
+    img:"/images/invoicepro.png",   // 👈 replace with your screenshot path
   },
   {
-    title:"TaskFlow", tagline:"Team task management API",
-    desc:"Production REST API with role-based access, team workspaces, deadline tracking and full Postman documentation collection.",
+    title:"Customer-Management System", tagline:"Team task management API",
+    desc:"A robust backend-driven customer management system designed to handle transactions, track dues, and manage customer data efficiently. Features secure authentication, role-based access, and scalable REST APIs for reliable business operations.",
     tech:["Express.js","MongoDB","JWT","REST","Bcrypt"],
-    gh:"https://github.com/anshulverma", live:"https://taskflow.live",
+    gh:"https://github.com/Coder-0120/Customer-Management-System", live:"https://taskflow.live",
     featured:true, color:"#7c3aed", color2:"#f59e0b",
-    img:"/images/taskflow.png",     // 👈 replace with your screenshot path
+    img:"/images/customer-management.png",     // 👈 replace with your screenshot path
   },
 ];
 const REST = [
   {
-    title:"AlgoVisualizer", tagline:"DSA animations in the browser",
-    desc:"Interactive visualizer for sorting, graph traversals & DP. Watch algorithms run step by step with Canvas.",
+    title:"Abes-Findify", tagline:"Reuniting What Matters.",
+    desc:"A full-stack campus lost-and-found platform that enables ABES Engineering College students to report, discover, and reclaim lost items—making recovery fast, simple, and community-driven.",
     tech:["React","Canvas API","JavaScript"],
-    gh:"https://github.com/anshulverma", live:"https://algoviz.live",
+    gh:"https://github.com/Coder-0120/ABES_FINDIFY", live:"https://abes-findify.vercel.app/",
     color:"#f59e0b", color2:"#00d4aa",
-    img:"/images/algoviz.png",      // 👈 replace with your screenshot path
+    img:"/images/abes-findify.png",      // 👈 replace with your screenshot path
   },
   {
-    title:"ShopEase", tagline:"E-commerce with Stripe",
-    desc:"Full e-commerce stack — products, cart, Stripe payments and an admin dashboard with live analytics.",
+    title:"APIFlux", tagline:"Real-Time Insights for Reliable APIs.",
+    desc:"APIFlux is a real-time API monitoring system that helps developers and businesses track API uptime, performance, and response trends through live health checks, detailed logs, and visual analytics.",
     tech:["React","Node.js","MongoDB","Stripe"],
-    gh:"https://github.com/anshulverma", live:"https://shopease.live",
+    gh:"https://github.com/Coder-0120/API-Monitoring", live:"https://apiflux.live",
     color:"#00d4aa", color2:"#f43f5e",
-    img:"/images/shopease.png",     // 👈 replace with your screenshot path
+    img:"/images/apiflux.png",     // 👈 replace with your screenshot path
   },
   {
-    title:"CodePulse", tagline:"AI-powered code reviewer",
-    desc:"Paste JS or Python, get instant AI feedback — bug detection, complexity analysis, refactor hints inline.",
+    title:"GoFood", tagline:"Delicious Food, Just a Click Away.",
+    desc:"A modern food ordering web application built using the MERN stack, providing a fast, secure, and intuitive platform for users to browse food categories, place orders, and enjoy a seamless dining experience.",
     tech:["React","OpenAI","Node.js"],
-    gh:"https://github.com/anshulverma", live:"https://codepulse.live",
+    gh:"https://github.com/Coder-0120/GoFood", live:"https://gofood.live",
     color:"#7c3aed", color2:"#00d4aa",
-    img:"/images/codepulse.png",    // 👈 replace with your screenshot path
+    img:"/images/gofood.png",    // 👈 replace with your screenshot path
   },
 ];
 
@@ -165,7 +165,7 @@ export default function Projects() {
       <div className="proj-inner">
         <div className="proj-hd rv">
           <div>
-            <div className="eyebrow">03 — Projects</div>
+            <div className="eyebrow">04 — Projects</div>
             <h2 className="display">Things I've<br /><em>shipped</em></h2>
           </div>
           <a href="https://github.com/anshulverma" className="proj-gh"

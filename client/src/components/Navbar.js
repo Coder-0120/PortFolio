@@ -4,6 +4,7 @@ import "../styles/Navbar.css";
 const LINKS = [
   { href: "#about",    label: "About"    },
   { href: "#skills",   label: "Skills"   },
+  {href: "#experience", label: "Experience"},
   { href: "#projects", label: "Projects" },
   { href: "#contact",  label: "Contact"  },
 ];
@@ -60,7 +61,7 @@ export default function Navbar() {
             <a key={l.href} href={l.href} className="nav-mob-link"
               onClick={() => setOpen(false)}>
               {l.label}
-              <span className="mob-num">0{i + 1}</span>
+              {/* <span className="mob-num">0{i + 1}</span> */}
             </a>
           ))}
         </div>

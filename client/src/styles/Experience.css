@@ -1,0 +1,266 @@
+/* ══ EXPERIENCE — experience.css ═══════════════════════════ */
+
+.exp-sec {
+  padding: clamp(4rem,7vh,6rem) clamp(1.25rem,4vw,3rem);
+  background: var(--bg-2);
+  position: relative;
+  overflow: hidden;
+}
+.exp-sec::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px;
+  background: linear-gradient(90deg,transparent,rgba(0,212,170,.3),transparent);
+}
+.exp-sec::after {
+  content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 1px;
+  background: linear-gradient(90deg,transparent,rgba(124,58,237,.2),transparent);
+}
+
+.exp-inner {
+  max-width: 1080px; margin: 0 auto;
+  position: relative; z-index: 1;
+}
+
+/* ── Entrance animation ── */
+.exp-hd, .exp-card {
+  opacity: 0; transform: translateY(22px);
+  transition: opacity .55s ease, transform .55s cubic-bezier(.34,1.4,.64,1);
+}
+.exp-hd.exp-in, .exp-card.exp-in {
+  opacity: 1; transform: translateY(0);
+}
+
+/* ── Heading ── */
+.exp-hd { margin-bottom: 2rem; }
+
+/* ══ BACKGROUND EFFECTS ═══════════════════════════════════ */
+
+/* Pulsing rings */
+.exp-bg-ring {
+  position: absolute; border-radius: 50%;
+  border: 1px solid rgba(0,212,170,.07);
+  pointer-events: none; z-index: 0;
+}
+.exp-ring-1 {
+  width: 500px; height: 500px;
+  top: 50%; left: 50%;
+  transform: translate(-50%,-50%);
+  animation: ringPulse 6s ease-in-out infinite;
+}
+.exp-ring-2 {
+  width: 750px; height: 750px;
+  top: 50%; left: 50%;
+  transform: translate(-50%,-50%);
+  border-color: rgba(124,58,237,.05);
+  animation: ringPulse 6s ease-in-out infinite .8s;
+}
+.exp-ring-3 {
+  width: 1000px; height: 1000px;
+  top: 50%; left: 50%;
+  transform: translate(-50%,-50%);
+  animation: ringPulse 6s ease-in-out infinite 1.6s;
+}
+@keyframes ringPulse {
+  0%,100% { opacity: .6; transform: translate(-50%,-50%) scale(1); }
+  50%      { opacity: 1;  transform: translate(-50%,-50%) scale(1.04); }
+}
+
+/* Ambient blobs */
+.exp-blob {
+  position: absolute; border-radius: 50%;
+  filter: blur(70px); pointer-events: none; z-index: 0;
+}
+.exp-blob-1 {
+  width: 380px; height: 380px;
+  top: -60px; left: -80px;
+  background: radial-gradient(circle,rgba(0,212,170,.08),transparent 70%);
+  animation: blobDrift 10s ease-in-out infinite alternate;
+}
+.exp-blob-2 {
+  width: 300px; height: 300px;
+  bottom: -40px; right: -60px;
+  background: radial-gradient(circle,rgba(124,58,237,.1),transparent 70%);
+  animation: blobDrift 8s ease-in-out infinite alternate-reverse;
+}
+@keyframes blobDrift {
+  from { transform: translate(0,0); }
+  to   { transform: translate(25px,18px); }
+}
+
+/* Floating particles */
+.exp-particles {
+  position: absolute; inset: 0;
+  pointer-events: none; z-index: 0; overflow: hidden;
+}
+.exp-particle {
+  position: absolute;
+  left: var(--x); bottom: -6px;
+  width: 2px; height: 2px; border-radius: 50%;
+  background: var(--teal); opacity: 0;
+  animation: particleRise var(--d) var(--delay) ease-in infinite;
+}
+.exp-particle:nth-child(even) { background: var(--violet); }
+@keyframes particleRise {
+  0%   { opacity: 0;   transform: translateY(0) scale(1); }
+  15%  { opacity: 0.6; }
+  85%  { opacity: 0.2; }
+  100% { opacity: 0;   transform: translateY(-100vh) scale(0.4); }
+}
+
+/* ══ HORIZONTAL CARD ══════════════════════════════════════ */
+.exp-card {
+  display: grid;
+  grid-template-columns: auto 1px 1fr 1px auto;
+  gap: 0;
+  align-items: center;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  overflow: hidden;
+  position: relative;
+  transition: border-color .3s, box-shadow .3s,
+              opacity .55s ease, transform .55s cubic-bezier(.34,1.4,.64,1);
+}
+.exp-card:hover {
+  border-color: rgba(0,212,170,.25);
+  box-shadow: 0 24px 60px rgba(0,0,0,.45), 0 0 40px rgba(0,212,170,.06);
+}
+
+/* Top glowing line */
+.exp-card-topline {
+  position: absolute; top: 0; left: 0; right: 0; height: 2px;
+  background: linear-gradient(90deg, var(--teal), var(--violet));
+  transform: scaleX(0); transform-origin: left;
+  transition: transform .5s var(--ease);
+}
+.exp-card:hover .exp-card-topline { transform: scaleX(1); }
+
+/* Vertical dividers */
+.exp-card-div {
+  width: 1px; height: 100%;
+  background: var(--border); align-self: stretch;
+}
+
+/* ── Left: org ── */
+.exp-card-left {
+  padding: 1.6rem 1.75rem;
+  display: flex; flex-direction: column;
+  align-items: center; gap: .9rem;
+  min-width: 200px;
+}
+
+.exp-org-logo {
+  width: 52px; height: 52px; border-radius: 14px; flex-shrink: 0;
+  background: linear-gradient(135deg, var(--teal), var(--violet));
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--f-mono); font-size: .78rem; font-weight: 700;
+  color: #030f0c; letter-spacing: .04em;
+  box-shadow: 0 8px 24px rgba(0,212,170,.25);
+  transition: transform .35s cubic-bezier(.34,1.56,.64,1);
+}
+.exp-card:hover .exp-org-logo { transform: scale(1.08) rotate(-4deg); }
+
+.exp-org-info { text-align: center; }
+.exp-org-name {
+  font-family: var(--f-sans); font-size: .92rem; font-weight: 600;
+  color: var(--text); margin-bottom: .3rem;
+}
+.exp-org-x     { color: var(--text-3); }
+.exp-org-partner { color: var(--teal); }
+
+.exp-org-role {
+  font-family: var(--f-sans); font-size: .75rem; font-weight: 300;
+  color: var(--text-2); margin-bottom: .6rem; line-height: 1.4;
+}
+
+.exp-org-meta { display: flex; flex-direction: column; align-items: center; gap: .35rem; }
+
+.exp-period-chip {
+  font-family: var(--f-mono); font-size: .58rem;
+  letter-spacing: .1em; text-transform: uppercase; color: var(--text-3);
+}
+.exp-type-chip {
+  display: inline-flex; align-items: center; gap: .4rem;
+  padding: .2rem .65rem;
+  background: rgba(0,212,170,.08); border: 1px solid rgba(0,212,170,.2);
+  border-radius: 999px;
+  font-family: var(--f-mono); font-size: .57rem;
+  letter-spacing: .1em; text-transform: uppercase; color: var(--teal);
+}
+.exp-live-dot {
+  width: 5px; height: 5px; border-radius: 50%;
+  background: var(--teal); flex-shrink: 0;
+  animation: livePulse 2s ease-in-out infinite;
+}
+@keyframes livePulse {
+  0%,100% { box-shadow: 0 0 0 0 rgba(0,212,170,.5); }
+  50%      { box-shadow: 0 0 0 4px rgba(0,212,170,0); }
+}
+
+/* ── Middle: bullet points ── */
+.exp-card-mid {
+  padding: 1.6rem 1.75rem;
+  display: flex; flex-direction: column; gap: .55rem;
+}
+
+.exp-point {
+  display: flex; align-items: center; gap: .7rem;
+  font-size: .8rem; font-weight: 300; color: var(--text-2);
+  line-height: 1.5;
+  opacity: 0; transform: translateX(-10px);
+  transition: opacity .4s ease, transform .4s ease, color .25s;
+}
+.exp-point:hover { color: var(--text); }
+.exp-point.exp-point-in { opacity: 1; transform: translateX(0); }
+.exp-point-ico { font-size: .9rem; flex-shrink: 0; }
+
+/* ── Right: stats + pills ── */
+.exp-card-right {
+  padding: 1.6rem 1.75rem;
+  display: flex; flex-direction: column;
+  gap: 1.1rem; min-width: 180px;
+}
+
+.exp-stats {
+  display: flex; gap: 1.1rem; justify-content: center;
+}
+.exp-stat { text-align: center; }
+.exp-stat-n {
+  font-family: var(--f-display);
+  font-size: clamp(1.4rem,2.5vw,1.8rem);
+  font-weight: 400; line-height: 1;
+  color: var(--teal); margin-bottom: .15rem;
+}
+.exp-stat-l {
+  font-family: var(--f-mono); font-size: .52rem;
+  letter-spacing: .1em; text-transform: uppercase; color: var(--text-3);
+}
+
+.exp-stack { display: flex; flex-wrap: wrap; gap: .3rem; }
+.exp-pill {
+  padding: .18rem .55rem;
+  border: 1px solid var(--border-2); border-radius: 5px;
+  font-family: var(--f-mono); font-size: .56rem;
+  letter-spacing: .07em; text-transform: uppercase;
+  color: var(--text-3); transition: all .25s;
+}
+.exp-pill:hover { border-color: rgba(0,212,170,.35); color: var(--teal); }
+
+/* ── Responsive ── */
+@media (max-width: 860px) {
+  .exp-card {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+  .exp-card-div { width: 100%; height: 1px; }
+  .exp-card-left { flex-direction: row; align-items: center; text-align: left; padding: 1.25rem 1.5rem; }
+  .exp-org-info  { text-align: left; }
+  .exp-org-meta  { align-items: flex-start; }
+  .exp-card-mid, .exp-card-right { padding: 1.25rem 1.5rem; }
+  .exp-stats { justify-content: flex-start; }
+  .exp-ring-1 { width: 300px; height: 300px; }
+  .exp-ring-2 { width: 450px; height: 450px; }
+  .exp-ring-3 { display: none; }
+}
+@media (max-width: 480px) {
+  .exp-card-left { flex-direction: column; align-items: flex-start; }
+}

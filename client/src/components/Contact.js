@@ -63,7 +63,7 @@ export default function Contact() {
 
       <div className="contact-inner">
         <div className="rv">
-          <div className="eyebrow">04 — Contact</div>
+          <div className="eyebrow">05 — Contact</div>
           <h2 className="display">Let's build<br />something <em>great</em></h2>
           <p className="contact-sub">
             Have an idea, opportunity or want to say hello? I respond within
