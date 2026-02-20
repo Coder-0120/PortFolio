@@ -40,7 +40,7 @@ export default function Navbar() {
 
           {/* CTA */}
           <a href="/resume.pdf" className="nav-cta" download="Anshul_Verma_Resume.pdf">Resume ↓</a>
-
+{/* ndnsnddkskd */}
 
           {/* Hamburger */}
           <button
