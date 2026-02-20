@@ -380,8 +380,11 @@
 .soc::before { content: ''; position: absolute; bottom: 0; left: 0; height: 2px; width: 0; background: linear-gradient(90deg,var(--teal),var(--violet)); transition: width .4s var(--ease); }
 .soc:hover { background: var(--surface-2); transform: translateY(-3px); box-shadow: 0 14px 36px rgba(0,0,0,.35); }
 .soc:hover::before { width: 100%; }
-.soc-ico { font-size: 1.3rem; }
-.soc-lbl { font-family: var(--f-mono); font-size: .67rem; letter-spacing: .1em; text-transform: uppercase; color: var(--text-2); flex: 1; }
+.soc-ico {
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+}.soc-lbl { font-family: var(--f-mono); font-size: .67rem; letter-spacing: .1em; text-transform: uppercase; color: var(--text-2); flex: 1; }
 .soc-arr { font-size: .85rem; color: var(--text-2); }
 .status-p {
   display: flex; align-items: center; gap: .65rem; padding: .8rem 1rem;

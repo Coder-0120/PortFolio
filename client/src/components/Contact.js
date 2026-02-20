@@ -1,16 +1,17 @@
 import React, { useState } from "react";
 import "../styles/Sections.css";
+import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
+import { MdEmail } from "react-icons/md";
 
 // 👇 Get your free key at web3forms.com → Enter your email → Copy key
 const WEB3FORMS_KEY = "d60c7cb2-7e44-4f02-aa57-18b9ac1a1521";
 
 const SOCIALS = [
-  { ico:"🐙", lbl:"GitHub",   href:"https://github.com/Coder-0120" },
-  { ico:"💼", lbl:"LinkedIn", href:"https://www.linkedin.com/in/anshul-verma180705/" },
-  { ico:"🐦", lbl:"Twitter",  href:"#" },
-  { ico:"📧", lbl:"Email",    href:"mailto:av4862187@gmail.com" },
+  { ico: <FaGithub />,   lbl: "GitHub",   href: "https://github.com/Coder-0120" },
+  { ico: <FaLinkedin />, lbl: "LinkedIn", href: "https://www.linkedin.com/in/anshul-verma180705/" },
+  { ico: <FaTwitter />,  lbl: "Twitter",  href: "#" },
+  { ico: <MdEmail />,    lbl: "Email",    href: "mailto:av4862187@gmail.com" },
 ];
-
 export default function Contact() {
   const [form, setForm]     = useState({ name:"", email:"", msg:"" });
   const [status, setStatus] = useState("idle"); // idle | sending | ok | error
